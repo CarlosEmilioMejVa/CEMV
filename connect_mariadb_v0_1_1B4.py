@@ -22,9 +22,9 @@ cualquier otra funcion
 
 # Funciona
 def connect_to_database(
-		host="192.168.13.133",
-		user="csistemas",
-		password="U3cat3p3c",
+		host="192.168.xxx.xxx",
+		user="",
+		password="",
 		database="cemv"
 ):
 	"""
