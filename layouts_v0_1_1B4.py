@@ -24,7 +24,7 @@ def retry_connect_layout():
 		[sg.T("Host: "), sg.P(), sg.I(s = (17, 1), k = "-HOST-")],
 		[sg.T("User: "), sg.P(), sg.I(s = (17, 1), k = "-USER-")],
 		[sg.T("Pass: "), sg.P(), sg.I(s = (17, 1), k = "-PASS-")],
-		[sg.T("DB: ")  , sg.P(),   sg.I(s = (17, 1), k = "-DB-")],
+		[sg.T("DB: ")  , sg.P(), sg.I(s = (17, 1), k = "-DB-")],
 		[sg.P(), sg.B("Salir", k = "-EXIT-"), sg.B("Connect", k = "-CONN-")]
 	]
 
