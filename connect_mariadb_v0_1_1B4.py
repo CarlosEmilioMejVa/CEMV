@@ -22,9 +22,9 @@ cualquier otra funcion
 
 # Funciona
 def connect_to_database(
-		host="192.168.xxx.xxx",
-		user="",
-		password="",
+		host="192.168.013.133",
+		user="csistemas",
+		password="U3cat3p3c",
 		database="cemv"
 ):
 	"""
@@ -208,6 +208,12 @@ def get_estatus_from_name(mydb, estatus_name):
 	cursor.close()
 	return results[0]
 
+def select_last_id(mydb):
+	with mydb.cursor() as cursor:
+		query = 'SELECT LAST_INSERT_ID();'
+		cursor.execute(query)
+		results = cursor.fetchone()[0]
+	return results
 
 def add_records(mydb, data):
 	"""
@@ -218,11 +224,12 @@ def add_records(mydb, data):
 		query = "INSERT INTO `cemv`.`records_raw` VALUES (DEFAULT, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 		cursor.execute(query, data)
 		mydb.commit()
-		return True
+
+		return [True, select_last_id(mydb)]
 
 	except mariadb.Error as err:
 		print(f"Error en add_records: {err}")
-		return False
+		return [False, None]
 
 	finally:
 		cursor.close()

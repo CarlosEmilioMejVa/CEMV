@@ -58,11 +58,7 @@ def login_menu(mydb):
 	y si existe, devuelve sus datos con la funcion
 	`get_full_data(db_connection, id_usuario)`
 	"""
-	
 	layout = login_window()
-
-
-
 	window = sg.Window("Log In • CEMV", layout)
 
 	cont = 0
@@ -217,10 +213,10 @@ def add_records_window(mydb, data):
 
 						data_as_strings = [str(x) if isinstance(x, int) else x for x in record_data]
 
-						result = add_records(mydb, data_as_strings)
+						result, last_id = add_records(mydb, data_as_strings)
 
 						if result:
-							sg.popup("Se guardaron los datos!")
+							sg.popup(f"Se guardaron los datos!\nFolio:\t{last_id}")
 							clear(window)
 						else:
 							sg.popup("Hubo un error...")
