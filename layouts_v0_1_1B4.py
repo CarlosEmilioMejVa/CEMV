@@ -2,8 +2,6 @@ import PySimpleGUI as sg
 import os
 import datetime
 
-from connect_mariadb_v0_1_1B4 import *
-
 '''
 Este archivo es para tener acomodados los layouts de las diferentes 
 ventanas y menús.

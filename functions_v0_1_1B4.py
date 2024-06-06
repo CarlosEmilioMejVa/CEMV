@@ -4,9 +4,6 @@ import datetime
 from icecream import ic
 import pyperclip as clipboard
 
-from connect_mariadb_v0_1_1B4 import *
-from layouts_v0_1_1B4 import *
-
 '''
 Este archivo es para poder alamcenar funciones genericas que no son 
 ni ventanas, layouts o queries, si no simples funciones.
