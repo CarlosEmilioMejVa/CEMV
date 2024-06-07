@@ -17,5 +17,7 @@ def save_last_known_commit_sha(mydb, sha_value, sha_date):
 		cursor.execute(query)
 		mydb.commit()
 
-with connect_to_database() as mydb:
-	print(mydb)
+mydb = connect_to_database()
+print(mydb)
+sha_value, sha_date = get_lastest_commit()
+save_last_known_commit_sha(mydb, sha_value, sha_date)
