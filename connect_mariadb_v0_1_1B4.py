@@ -1,6 +1,8 @@
 import mariadb
 from icecream import ic
 
+from classes import *
+
 '''
 Este archivo es para tener acomodados los queries de la BD.
 
@@ -86,7 +88,7 @@ def get_full_data(mydb, id_usuario):
 	cursor.execute(query, (id_usuario,))
 	results = cursor.fetchone()
 	cursor.close()
-	return results
+	return User(*results)
 
 
 def get_retries(mydb):

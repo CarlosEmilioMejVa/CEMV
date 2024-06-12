@@ -6,6 +6,7 @@ import datetime
 from connect_mariadb_v0_1_1B4 import *
 from layouts_v0_1_1B4 import *
 from functions_v0_1_1B4 import *
+from classes import *
 
 '''
 Este es el CSS del CEMV, aqui están todas las ventanas de la GUI, si
